@@ -1968,8 +1968,12 @@ __webpack_require__.r(__webpack_exports__);
     fetchPosts: function fetchPosts() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:8000/api/posts').then(function (res) {
+      axios.get('http://localhost:8000/api/posts').then(function (res) {
         _this.posts = res.data;
+      })["catch"](function (err) {
+        console.error(err);
+      }).then(function () {
+        console.info('chiamata terminata');
       });
     }
   },

@@ -20,9 +20,16 @@ import Axios from 'axios';
      },
      methods:{
        fetchPosts(){
-          Axios.get('http://localhost:8000/api/posts')
-          .then(res=>{
+          axios
+          .get('http://localhost:8000/api/posts')
+          .then((res)=>{
             this.posts = res.data;
+          })
+          .catch((err)=>{
+            console.error(err);
+          })
+          .then(()=>{
+            console.info('chiamata terminata');
           });
        },
      },
