@@ -1958,6 +1958,15 @@ __webpack_require__.r(__webpack_exports__);
   name: 'PostCard',
   props: {
     post: Object
+  },
+  computed: {
+    publishedAt: function publishedAt() {
+      var postDate = new Date(this.post.created_at);
+      var day = postDate.getDate();
+      var month = postDate.getMonth();
+      var year = postDate.getFullYear();
+      return "".concat(day, "/").concat(month, "/").concat(year);
+    }
   }
 });
 
@@ -2119,17 +2128,14 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card",
-    staticStyle: {
-      width: "18rem"
-    }
+    staticClass: "card mb-3"
   }, [_c("div", {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title"
   }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("h6", {
     staticClass: "card-subtitle mb-2 text-muted"
-  }, [_vm._v(" Post creato il:" + _vm._s(_vm.post.created_at))]), _vm._v(" "), _c("p", {
+  }, [_vm._v(" Post creato il:" + _vm._s(_vm.publishedAt))]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.post.content))])])]);
 };
