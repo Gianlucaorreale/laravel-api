@@ -1972,13 +1972,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _PostCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostCard.vue */ "./resources/js/components/posts/PostCard.vue");
-
+/* harmony import */ var _PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostCard.vue */ "./resources/js/components/posts/PostCard.vue");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostsList",
+  components: {
+    PostCard: _PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       posts: []
@@ -1999,9 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.fetchPosts();
-  },
-  components: {
-    PostCard: _PostCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2162,7 +2159,7 @@ var render = function render() {
     attrs: {
       id: "posts-list"
     }
-  }, [_c("h2", [_vm._v("Posts")]), _vm._v(" "), _vm.post.length ? _c("div", _vm._l(_vm.posts, function (post) {
+  }, [_c("h2", [_vm._v("Posts")]), _vm._v(" "), _vm.posts.length ? _c("div", _vm._l(_vm.posts, function (post) {
     return _c("PostCard", {
       key: post.id,
       attrs: {

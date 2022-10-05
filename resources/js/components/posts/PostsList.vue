@@ -2,8 +2,8 @@
    <section id="posts-list">
       <h2>Posts</h2>
       <div v-if="posts.length">
-        <PostCard v-for = "post in posts" :key ="post.id"
-        :post = "post" />
+        <PostCard v-for="post in posts" :key="post.id"
+        :post="post" /> 
       </div>
       <h5 v-else>nessun post</h5>
    </section>
@@ -17,7 +17,9 @@ import PostCard from './PostCard.vue';
     name: "PostsList",
     components: { PostCard },
     data() {
-        return { posts: [] };
+        return { 
+            posts: [], 
+        };
     },
     methods: {
         fetchPosts() {
